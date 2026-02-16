@@ -9,6 +9,7 @@ $GEOTIFF = "gebco_geo.tif"
 # Directly generate WGS84 (EPSG:4326) GeoTIFF
 # -32767 suggests NoDATA cell because Int16 ranges -32768 ~ 32767
 # NO -scale
+# -scale will do linear stretch on grid cells（rescaling）
 gdal_translate -of GTiff -co TFW=YES -a_srs EPSG:4326 -a_nodata -32767 $NC $GEOTIFF
 Write-Host "✅ GEBCO GeoTIFF (WGS84) Generated"
 
