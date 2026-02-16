@@ -10,7 +10,7 @@ gmt convert $XYZ "-o0,1,2" -fg | gmt mapproject -Ju33N -R-180/180/-90/90 -F -C >
 #    -fg: force geographic coordinate format (longitude/latitude)
 #
 # 2. gmt mapproject: Map projection transformation
-#    -Ju33N: use UTM projection, zone 33 Northern hemisphere
+#    -Ju33N: use UTM projection, in this case, zone 33 Northern hemisphere (Italia)
 #    -R-180/180/-90/90: set region range (longitude west 180 to east 180, latitude south 90 to north 90)
 #    -F: output geographic and projected coordinates
 #    -C: output projection conversion information
