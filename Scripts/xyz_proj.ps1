@@ -16,3 +16,7 @@ gmt convert $XYZ "-o0,1,2" -fg | gmt mapproject -Ju33N -R-180/180/-90/90 -F -C >
 #    -C: output projection conversion information
 #
 # 3. > utm33n_gmt.xyz: redirect results to output file
+#
+# Before convert the whole file, a set of point can be tried as:
+# Example: Vavilov Volcano
+# echo "12.59 39.85" | gmt mapproject -R10/17/37/40 -Ju33N -C -F
