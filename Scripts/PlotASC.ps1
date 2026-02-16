@@ -1,6 +1,8 @@
-# ================================
-# Plot topography from ESRI .asc
-# ================================
+# ====================================================
+# Plot topography from .asc data (PowerShell + GMT 6)
+# Example Region: 9–17 E, 38–43 N (Tyrrhenian Sea)
+# Data: ESRI .asc grid file
+# ====================================================
 
 # ----- Region & projection -----
 $R = "-R9/17/38/43"      # lon_min/lon_max/lat_min/lat_max
@@ -19,7 +21,7 @@ gmt begin EuropeTopo_ASC tif
     # 1. Convert ESRI ASCII grid to GMT grid
     gmt grdconvert $ASC $GRID
 
-    # 2. Make color palette (sea + land)
+    # 2. Make colour palette (sea + land)
     gmt makecpt -Chaxby "-T-3800/0/200" -Z -H | Out-File $CPT -Encoding ascii
 
     # 3. Compute hillshade
