@@ -1,6 +1,6 @@
 $env:LC_NUMERIC = "C"  # Use C locale (dot as decimal point)
 
-$XYZ = "C:/Users/yangln/Desktop/Postdoc/CNR_Italy/Maps/tirreno_all_geo_100.xyz"
+$XYZ = "./../Map.xyz"
 gmt convert $XYZ "-o0,1,2" -fg | gmt mapproject -Ju33N -R-180/180/-90/90 -F -C > utm33n_gmt.xyz
 
 # Execute GMT data processing pipeline:
