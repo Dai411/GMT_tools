@@ -6,6 +6,7 @@ are different formats of morphological data file. In this manual I gave a quick 
 
  ## Input Data Files  
  ### .xyz format
- `.xyz has three coloumbs which are normally as longitude, latitude and elevation.`
+ `.xyz suggests three colombs which are X, Y, and Z. The X, Y, and Z are normally as longitude, latitude and elevation. 
+ X and Y can also be the corrdinate as horizontal and vertical. `
  
  
