@@ -4,6 +4,8 @@ In this project, I put some tools I wrote with matalb, powershell (adaptable for
 are different formats of morphological data file. In this manual I gave a quick introduction on these formats. 
 
 
- ## Input Data Files
- ### .xyz 
+ ## Input Data Files  
+ ### .xyz file
+ 
+ 
  
