@@ -6,6 +6,6 @@ are different formats of morphological data file. In this manual I gave a quick 
 
  ## Input Data Files  
  ### .xyz file
- 
+ `.xyz has three coloumbs which are normally as longitude, latitude and elevation.`
  
  
