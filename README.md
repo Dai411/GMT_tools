@@ -7,8 +7,8 @@ are different formats of morphological data file. In this manual I gave a quick 
 ## Input Data Files  
 ### .xyz format
 ```
-.xyz suggests three colombs which are X, Y, and Z. The X, Y, and Z are normally as longitude, latitude and elevation. 
- X and Y can also be the corrdinate as horizontal and vertical.
+.xyz is kind of point cloud file, with three colombs which are X, Y, and Z. The X, Y, and Z are normally as
+longitude, latitude and elevation. X and Y can also be the corrdinate as horizontal and vertical.
 ```
  
  
