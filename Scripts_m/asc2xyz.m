@@ -1,10 +1,10 @@
 % Format Transformer
 % ESRI ASCII Grid to XYZ format
-% 设置文件名
-inputFile = 'C:\Users\yangln\Desktop\Postdoc\CNR_Italy\Maps\tirreno_all_geo_100.asc';
-outputFile = 'C:\Users\yangln\Desktop\Postdoc\CNR_Italy\Maps\tirreno_all_geo_100.xyz';
+% Set the file name
+inputFile = '*.asc';
+outputFile = '*.xyz';
 
-% 1. 读取表头 (前6行)
+% 1. Read header
 fid = fopen(inputFile, 'r');
 header = textscan(fid, '%s %f', 6);
 fclose(fid);
@@ -16,19 +16,19 @@ yll = header{2}(4);
 cellsize = header{2}(5);
 nodata = header{2}(6);
 
-% 2. 读取数据矩阵 (跳过表头)
+% 2. Read data matrix (skip header)
 data = readmatrix(inputFile, 'FileType', 'text', 'NumHeaderLines', 6);
 
-% 3. 生成坐标网格 (注意：ASC格式通常从左上角开始排列数据)
+% 3. generate meshgrid (Note: ASC Format starts from the left top corner)
 x = xll : cellsize : xll + (ncols-1)*cellsize;
-y = yll + (nrows-1)*cellsize : -cellsize : yll; % Y是从上往下减
-[X, Y] = meshgrid(x, y);
+y = yll + (nrows-1)*cellsize : -cellsize : yll; % Y Descreases from top to bottom[X, Y] = meshgrid(x, y);
 
-% 4. 过滤无效值并重组为 XYZ
+% 4. Filter NO_DATA  in XYZ
 mask = (data ~= nodata);
 xyz = [X(mask), Y(mask), data(mask)];
 
-% 5. 保存为 XYZ 格式 (为了减小体积，可以只保存一部分，比如每隔2个点取一个)
+% 5. save as .xyz (To reduce the volum, partly data saved, take one point every two points. )
+
 % xyz_sub = xyz(1:2:end, :); 
 writematrix(xyz, outputFile, 'Delimiter', 'space', 'FileType', 'text');
 
