@@ -20,11 +20,16 @@ the file information of a `.grd` file.
 
 ### .nc format
 
-`.nc` is tyoe if NetCDF standard file, supporting high dimensional dataset with more variables. The command 
+`.nc` is a type if NetCDF standard file, supporting high dimensional dataset with more variables. The command 
 dealing with the `.grd` files can also applied on the `.nc` file. The `.nc` file can be cut with `gmt grdcut` 
 in space or CDO toolbox (need to be installed) like `cdo seldate` in time. The `.nc` files can also be dealed 
 with the NCO toolbox.
 
+### .asc format
+
+`.asc` is a text-based raster data storage standard, usually referring to ESRI Ascii grid format. The header of
+`.asc` files including the `ncols`, `nrows`, `xllcorner`, `yllcorner`, `cellsize` and `NODATA_value`. Afterward 
+is the grid data, list by lines from top to the bottom.
 
 
 
