@@ -11,10 +11,27 @@ are different formats of morphological data file. In this manual I gave a quick 
 longitude, latitude and elevation. X and Y can also be the corrdinate as horizontal and vertical. The colombs
 are seperated by splace or TAB. To plot the `.xyz` file with the GMT, a grid file (`.grd`) is the prerequisite.
 The `.grd` file can be generated with the `gmt surface`. `gmt grdgradient` is optional and `gmt grdimage` can 
-plot the `.grd` file generated from the `.xyz` file.  
+plot the `.grd` file generated from the `.xyz` file. There is also an option `gmt xyz2grd`, 
 
 ### .grd format  
 
-`.grd` is the 
+`.grd` is a type of grid data file, following the NetCDF standard (CF 1.7 in the GMT 6). `gmt grdinfo` can check 
+the file information of a `.grd` file. 
 
- 
+### .nc format
+
+`.nc` is tyoe if NetCDF standard file, supporting high dimensional dataset with more variables. The command 
+dealing with the `.grd` files can also applied on the `.nc` file. The `.nc` file can be cut with `gmt grdcut` 
+in space or CDO toolbox (need to be installed) like `cdo seldate` in time. The `.nc` files can also be dealed 
+with the NCO toolbox.
+
+
+
+
+
+
+### Abbrevation
+**NetCDF**: Network Common Data Form 
+**CF**: Climate and Forecast
+**CDO**: Climate Data Operators
+**NCO**: NetCDF operators
