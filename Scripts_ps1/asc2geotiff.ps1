@@ -1,3 +1,4 @@
+# Convert ESRI ASCII GRID data file into geotiff image
 # Input ASCII data file path
 $ASC = "*.asc"
 
