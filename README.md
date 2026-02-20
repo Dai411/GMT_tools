@@ -29,8 +29,12 @@ with the NCO toolbox.
 
 `.asc` is a text-based raster data storage standard, usually referring to ESRI Ascii grid format. The header of
 `.asc` files including the `ncols`, `nrows`, `xllcorner`, `yllcorner`, `cellsize` and `NODATA_value`. Afterward 
-is the grid data, list by lines from top to the bottom.
-
+is the grid data, list by lines from top to the bottom. It should be noted that the `xllcorner` and `yllcorner` 
+represnts the center point at the centre of left-bottom corner grid (or pixel). The defrined centre may be 
+different from other file format standards. The `.asc` file only support 2-Dimensional data. In GMT, the above 
+tools can support `.asc` format such as `gmt grd2xyz` and `gmt grdconvert`. The `*.asc=` can be selected as
+`ef`(ESRI Ascii Grid), `gd` (GMT default) or `ff` (Golden Software Surfer). If the direction of the data is 
+flipped, can be corrected by the `gmt grdflip`. 
 
 
 
