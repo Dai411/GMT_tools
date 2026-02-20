@@ -36,7 +36,30 @@ tools can support `.asc` format such as `gmt grd2xyz` and `gmt grdconvert`. The 
 `ef`(ESRI Ascii Grid), `gd` (GMT default) or `ff` (Golden Software Surfer). If the direction of the data is 
 flipped, can be corrected by the `gmt grdflip`. 
 
+  
 
+A comparison between the above 4 types of data format is listed:
+
+| Feature | **.xyz** | **.grd (GMT NetCDF)** | **.nc (NetCDF)** | **.asc (ESRI ASCII Grid)** |
+|---------|----------|------------------------|------------------|----------------------------|
+| **Full Name** | Simple XYZ Point Cloud | GMT Grid Format | Network Common Data Form | ESRI ASCII Grid |
+| **Data Type** | Point cloud / Scattered data | Regular grid (2D) | Multi-dimensional array | Regular grid (2D) |
+| **Format** | ASCII text | Binary (NetCDF-4) | Binary (NetCDF-3/4) | ASCII text |
+| **Human Readable** | ✅ Yes (any text editor) | ❌ No (binary) | ❌ No (binary) | ✅ Yes (any text editor) |
+| **File Size** | Large (text) | Small (compressed) | Small to Medium | Very Large (5-10× binary) |
+| **Read/Write Speed** | Slow | Fast | Fast | Very Slow |
+| **Self-describing** | ❌ No | ✅ Yes (CF-1.7) | ✅ Yes (CF standard) | ⚠️ Limited (only header) |
+| **Dimensions** | 2D/3D points | 2D (grid) | 2D, 3D, 4D+ | 2D (grid) |
+| **Multiple Variables** | ❌ No | ⚠️ Usually single | ✅ Yes | ❌ No |
+| **Time Dimension** | ❌ No | ❌ No | ✅ Yes | ❌ No |
+| **Metadata Support** | ❌ None | ✅ Good (units, ranges) | ✅ Excellent | ⚠️ Basic (6-line header) |
+| **Missing Data Handling** | ❌ Not defined | ✅ _FillValue attribute | ✅ _FillValue attribute | ✅ NODATA_value |
+| **Compression** | ❌ None | ✅ Deflate + shuffle | ✅ Various | ❌ None |
+| **Random Access** | ❌ No (sequential) | ✅ Yes | ✅ Yes | ❌ No (sequential) |
+| **Software Compatibility** | Universal | GMT, GDAL | GDAL, Python, MATLAB | Universal GIS |
+| **Typical File Extension** | `.xyz`, `.txt` | `.grd` | `.nc`, `.grd` | `.asc`, `.txt` |
+
+---
 
 
 ### Abbrevation
